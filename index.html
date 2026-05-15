@@ -23,7 +23,9 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a href="#contact" class="btn-project-desktop">Start a project</a>
+      <a href="#contact" class="btn-project-desktop btn-primary"
+        >Start a project</a
+      >
       <!-- Mobile Navigation -->
       <i class="fa-solid fa-bars fa-xl menu-toggle"></i>
       <nav class="mobile">
@@ -366,98 +368,102 @@
         </div>
       </section>
       <section class="contact" id="contact">
-        <div class="section-header">
-          <p class="header-tag">Get in touch</p>
-          <h2>Let's build something remarkable.</h2>
-          <p class="sub-header">
-            Tell us about your project. We read every message and reply within
-            one business day.
-          </p>
+        <div class="left-side">
+          <div class="section-header">
+            <p class="header-tag">Get in touch</p>
+            <h2>Let's build something remarkable.</h2>
+            <p class="sub-header">
+              Tell us about your project. We read every message and reply within
+              one business day.
+            </p>
+          </div>
+          <section class="info">
+            <article>
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="text">
+                <h3 class="title">Email</h3>
+                <p class="description">hello@forgestudio.io</p>
+              </div>
+            </article>
+            <article>
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="text">
+                <h3 class="title">Phone</h3>
+                <p class="description">+1(415) 000-0000</p>
+              </div>
+            </article>
+            <article>
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="text">
+                <h3 class="title">Location</h3>
+                <p class="description">San Francisco, CA - Remote Worldwide</p>
+              </div>
+            </article>
+            <article>
+              <div class="icon-wrapper">
+                <i class="fa-solid fa-link"></i>
+              </div>
+              <div class="text">
+                <h3 class="title">Website</h3>
+                <p class="description">www.forgestudio.io</p>
+              </div>
+            </article>
+          </section>
         </div>
-        <section class="info">
-          <article>
-            <div class="icon-wrapper">
-              <i class="fa-solid fa-envelope"></i>
-            </div>
-            <div class="text">
-              <h3 class="title">Email</h3>
-              <p class="description">hello@forgestudio.io</p>
-            </div>
-          </article>
-          <article>
-            <div class="icon-wrapper">
-              <i class="fa-solid fa-phone"></i>
-            </div>
-            <div class="text">
-              <h3 class="title">Phone</h3>
-              <p class="description">+1(415) 000-0000</p>
-            </div>
-          </article>
-          <article>
-            <div class="icon-wrapper">
-              <i class="fa-solid fa-location-dot"></i>
-            </div>
-            <div class="text">
-              <h3 class="title">Location</h3>
-              <p class="description">San Francisco, CA - Remote Worldwide</p>
-            </div>
-          </article>
-          <article>
-            <div class="icon-wrapper">
-              <i class="fa-solid fa-link"></i>
-            </div>
-            <div class="text">
-              <h3 class="title">Website</h3>
-              <p class="description">www.forgestudio.io</p>
-            </div>
-          </article>
-        </section>
-        <form method="post">
-          <label for="name">
-            Full name <span>*</span>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              required
-              placeholder="John Doe"
-            />
-          </label>
-          <label for="email">
-            Email <span>*</span>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              placeholder="your@mail.com"
-            />
-          </label>
-          <label for="service">
-            Service needed <span>*</span>
-            <select name="service" id="service">
-              <option value="" selected disabled hidden>
-                Select a service...
-              </option>
-              <option value="ui/ux design">UI & UX Design</option>
-              <option value="web development">Web Development</option>
-              <option value="mobile application">Mobile Application</option>
-              <option value="brand identity">Brand Identity</option>
-              <option value="cloud and devops">Cloud & DevOps</option>
-              <option value="growth & analytics">Growth & Analytics</option>
-              <option value="full project">Full Project</option>
-            </select>
-          </label>
-          <label for="notes">
-            Tell us about your project <span>*</span>
-            <textarea
-              name="notes"
-              id="notes"
-              placeholder="What are you building? What's the timeline? What'is the budget?"
-            ></textarea>
-          </label>
-          <button type="submit" class="btn-primary">Send Message</button>
-        </form>
+        <div class="right-side">
+          <form method="post">
+            <label for="name">
+              Full name <span>*</span>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                required
+                placeholder="John Doe"
+              />
+            </label>
+            <label for="email">
+              Email <span>*</span>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                required
+                placeholder="your@mail.com"
+              />
+            </label>
+            <label for="service">
+              Service needed <span>*</span>
+              <select name="service" id="service">
+                <option value="" selected disabled hidden>
+                  Select a service...
+                </option>
+                <option value="ui/ux design">UI & UX Design</option>
+                <option value="web development">Web Development</option>
+                <option value="mobile application">Mobile Application</option>
+                <option value="brand identity">Brand Identity</option>
+                <option value="cloud and devops">Cloud & DevOps</option>
+                <option value="growth & analytics">Growth & Analytics</option>
+                <option value="full project">Full Project</option>
+              </select>
+            </label>
+            <label for="notes">
+              Tell us about your project <span>*</span>
+              <textarea
+                name="notes"
+                id="notes"
+                placeholder="What are you building? What's the timeline? What'is the budget?"
+              ></textarea>
+            </label>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
       </section>
     </main>
 

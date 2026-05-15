@@ -56,6 +56,9 @@ button.btn-primary {
   outline: 5px solid transparent;
   transition: var(--ease);
 
+  &:hover {
+    filter: brightness(0.6);
+  }
   &:focus {
     outline: 5px solid rgba(168, 217, 58, 0.6);
     outline-offset: 2px;
@@ -106,9 +109,14 @@ a.btn-secondary {
     line-height: 150%;
   }
 }
+@media (min-width: 768px) {
+  .section-header h2 {
+    font-size: 3em;
+    max-width: 50%;
+  }
+}
 
 /* Navigation */
-
 header {
   display: flex;
   align-items: center;
@@ -198,8 +206,53 @@ a.btn-project-desktop {
   }
 }
 
+@media (min-width: 768px) {
+  header {
+    padding: 0 120px;
+    /* font-size: 14px; */
+  }
+  header .menu-toggle {
+    display: none;
+  }
+  header nav.desktop {
+    display: block;
+
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+    ul li a {
+      position: relative;
+      &::before {
+        content: "";
+        width: 0;
+        height: 3px;
+        background-color: var(--lime-dk);
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        transition: var(--ease);
+      }
+    }
+    ul li a:hover::before {
+      width: 100%;
+    }
+  }
+  header .btn-project-desktop {
+    display: block;
+    background-color: var(--ink);
+    color: var(--white);
+    /* font-family: var(--font-head);
+    font-weight: 700;
+    padding: 10px 30px;
+    border-radius: 999px; */
+  }
+}
 /* Main Content */
 
+/* Hero Section */
 .hero {
   background-color: var(--ink);
   padding: 20px;
@@ -294,6 +347,34 @@ a.btn-project-desktop {
   }
 }
 
+@media (min-width: 768px) {
+  .hero {
+    padding: 40px 120px;
+    text-align: center;
+  }
+  .hero .left-side {
+    flex: 1;
+    h1 {
+      font-size: 4.5em;
+    }
+    p {
+      font-size: 1.2em;
+      max-width: 70%;
+      margin: 0 auto;
+    }
+    .buttons {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  .data .info {
+    span.number {
+      font-size: 3em !important;
+    }
+  }
+}
+
+/* Services Section */
 section.services {
   padding: 80px 20px;
 }
@@ -346,6 +427,16 @@ section.services .services-cards .card {
   }
 }
 
+@media (min-width: 768px) {
+  section.services {
+    padding: 100px 120px;
+  }
+  section.services .services-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* Portfolio Section */
 section.portfolio {
   background-color: var(--surface);
   padding: 60px 20px;
@@ -378,7 +469,6 @@ section.portfolio .filter-tags {
   font-weight: 700;
 
   .tag {
-    border: 1px solid var(--border);
     background-color: rgba(10, 10, 10, 0.07);
     border: 1px solid rgba(10, 10, 10, 0.14);
     padding: 6px 12px;
@@ -389,6 +479,9 @@ section.portfolio .filter-tags {
     outline: 5px solid transparent;
     transition: var(--ease);
 
+    &:hover {
+      background-color: rgba(10, 10, 10, 0.14);
+    }
     &:focus {
       outline: 5px solid rgba(168, 217, 58, 0.6);
       outline-offset: 2px;
@@ -413,7 +506,7 @@ section.portfolio .filter-tags {
   border-radius: 15px;
   overflow: hidden;
   border: 0.5px solid var(--border);
-  box-shadow: 0 0 15px rgba(46, 46, 46, 0.5);
+  box-shadow: 0 0 15px rgba(46, 46, 46, 0.1);
 
   .img-wrapper {
     width: 100%;
@@ -452,7 +545,16 @@ section.portfolio .filter-tags {
     }
   }
 }
+@media (min-width: 768px) {
+  section.portfolio {
+    padding: 100px 120px;
+  }
+  .project-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 
+/* Numbers Section */
 section.numbers {
   padding: 60px 20px;
   background-color: var(--ink);
@@ -463,9 +565,9 @@ section.numbers {
   }
 }
 .numbers-wrapper {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .number-card {
   padding: 40px 0;
@@ -502,13 +604,33 @@ section.numbers {
   width: 100%;
 }
 
+@media (min-width: 768px) {
+  section.numbers {
+    padding: 100px 120px;
+  }
+  .numbers-wrapper {
+    flex-direction: row;
+    .number-card {
+      flex: 1;
+      padding: 40px 40px;
+      h3 {
+        font-size: 3em;
+      }
+    }
+    .number-card:not(:last-child) {
+      border-bottom: none;
+      border-right: 1px solid var(--ink-3);
+    }
+  }
+}
+
+/* Team Section */
 section.team {
   padding: 60px 20px;
 }
 .members-cards {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto;
+  display: flex;
+  flex-direction: column;
 }
 .members-cards .card {
   padding: 30px;
@@ -564,13 +686,44 @@ section.team {
   }
 }
 
+@media (min-width: 768px) {
+  section.team {
+    padding: 100px 120px;
+  }
+  .members-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    .card {
+      flex: 1;
+    }
+  }
+  .members-cards .card:hover {
+    &:first-child {
+      border-radius: 20px 0 0 20px;
+    }
+    &:last-child {
+      border-radius: 0 20px 20px 0;
+    }
+  }
+  .members-cards .card {
+    h4.name {
+      font-size: 1.1em;
+    }
+    p.job,
+    p.description {
+      font-size: 0.9em;
+    }
+  }
+}
+
+/* Contact Section */
 section.contact {
   padding: 60px 20px;
   background-color: var(--surface);
 }
 section.contact .info {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 10px;
   margin-bottom: 60px;
 }
@@ -660,6 +813,34 @@ section.contact form {
   }
 }
 
+@media (min-width: 768px) {
+  section.contact {
+    padding: 100px 120px;
+    display: flex;
+    gap: 60px;
+    align-items: stretch;
+    .right-side {
+      flex: 1;
+    }
+    .left-side {
+      flex: 1;
+    }
+  }
+  .section-header h2 {
+    font-size: clamp(2em, 5vw, 3em);
+    max-width: 100%;
+  }
+  section.contact .info {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 0px;
+  }
+  .left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 /* Footer */
 footer {
   background-color: var(--ink);
@@ -709,5 +890,18 @@ footer .sub-footer {
   }
   span:hover {
     color: var(--lime);
+  }
+}
+
+@media (min-width: 768px) {
+  footer .main-footer {
+    padding: 20px 120px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header .description{
+      max-width: 460px;
+    }
   }
 }
