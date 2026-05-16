@@ -3,19 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Orbit Studio is a full-stack digital agency creating bold interfaces, scalable products, and brand experiences that move people. We handle the full stack — strategy, design, engineering, and growth."
+    />
+    <meta
+      name="keywords"
+      content="digital agency, UI design, UX design, web development, mobile apps, brand identity, cloud, devops, growth, analytics"
+    />
+    <meta name="author" content="Forge Studio" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="canonical" href="https://forgestudio.io/" />
     <link rel="stylesheet" href="style.css" />
-    <title>Orbit Studio</title>
+    <title>Orbit Studio | Full-stack digital agency</title>
+    <meta
+      property="og:title"
+      content="Orbit Studio | Full-stack digital agency"
+    />
+    <meta
+      property="og:description"
+      content="Orbit Studio builds bold interfaces, scalable products, and brand experiences with strategy, design, and engineering."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://forgestudio.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Orbit Studio | Full-stack digital agency"
+    />
+    <meta
+      name="twitter:description"
+      content="Orbit Studio builds bold interfaces, scalable products, and brand experiences with strategy, design, and engineering."
+    />
   </head>
   <body>
     <header>
       <a class="logo-wrapper" href="#hero">
         <div class="icon-wrapper">
-          <i class="fa-solid fa-circle-nodes"></i>
+          <i aria-hidden="true" class="fa-solid fa-circle-nodes"></i>
         </div>
         <p>Orbit Studio</p>
       </a>
       <!-- Desktop Navigation -->
-      <nav class="desktop">
+      <nav class="desktop" aria-label="Primary navigation">
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Work</a></li>
@@ -27,19 +58,27 @@
         >Start a project</a
       >
       <!-- Mobile Navigation -->
-      <i class="fa-solid fa-bars fa-xl menu-toggle"></i>
-      <nav class="mobile">
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+        aria-label="Open mobile menu"
+      >
+        <i aria-hidden="true" class="fa-solid fa-bars fa-xl"></i>
+      </button>
+      <nav id="mobile-menu" class="mobile" aria-label="Mobile navigation">
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#work">Work</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#contact">Contact</a></li>
-          <a href="#contact" class="btn-project">Start a project</a>
+          <li><a href="#contact" class="btn-project">Start a project</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero" id="hero">
         <div class="left-side">
           <h1>We Build the <span>Digital</span> Future.</h1>
@@ -102,9 +141,11 @@
           <article class="card">
             <div class="card-header">
               <span>01</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
             </div>
-            <div class="icon"><i class="fa-solid fa-compass-drafting"></i></div>
+            <div class="icon">
+              <i aria-hidden="true" class="fa-solid fa-compass-drafting"></i>
+            </div>
             <h3>UI & UX Design</h3>
             <p>
               User-centered interfaces built on research, empathy mapping, and
@@ -114,9 +155,11 @@
           <article class="card">
             <div class="card-header">
               <span>02</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
             </div>
-            <div class="icon"><i class="fa-solid fa-code"></i></div>
+            <div class="icon">
+              <i aria-hidden="true" class="fa-solid fa-code"></i>
+            </div>
             <h3>Web Development</h3>
             <p>
               Performant, accessible frontends and robust backends. Semantic
@@ -126,10 +169,13 @@
           <article class="card">
             <div class="card-header">
               <span>03</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
             </div>
             <div class="icon">
-              <i class="fa-solid fa-mobile-screen-button"></i>
+              <i
+                aria-hidden="true"
+                class="fa-solid fa-mobile-screen-button"
+              ></i>
             </div>
             <h3>Mobile Apps</h3>
             <p>
@@ -140,9 +186,11 @@
           <article class="card">
             <div class="card-header">
               <span>04</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
             </div>
-            <div class="icon"><i class="fa-solid fa-palette"></i></div>
+            <div class="icon">
+              <i aria-hidden="true" class="fa-solid fa-palette"></i>
+            </div>
             <h3>Brand Identity</h3>
             <p>
               Logos, systems, and guidelines that give your product a voice.
@@ -152,9 +200,11 @@
           <article class="card">
             <div class="card-header">
               <span>05</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
             </div>
-            <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+            <div class="icon">
+              <i aria-hidden="true" class="fa-solid fa-cloud-arrow-up"></i>
+            </div>
             <h3>Cloud & DevOps</h3>
             <p>
               Scalable infrastructure, CI/CD pipelines, and monitoring. Ship
@@ -164,9 +214,11 @@
           <article class="card">
             <div class="card-header">
               <span>06</span>
-              <i class="fa-solid fa-arrow-right"></i>
+              <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
             </div>
-            <div class="icon"><i class="fa-solid fa-chart-pie"></i></div>
+            <div class="icon">
+              <i aria-hidden="true" class="fa-solid fa-chart-pie"></i>
+            </div>
             <h3>Growth & Analytics</h3>
             <p>
               Data-driven decisions. SEO, performance audits, and dashboards
@@ -181,9 +233,9 @@
             <p class="header-tag">Portfolio</p>
             <h2>Selected work.</h2>
           </div>
-          <a href="#" class="btn-primary">All Projects</a>
+          <a href="#work" class="btn-primary">All Projects</a>
         </div>
-        <div class="filter-tags">
+        <div class="filter-tags" aria-label="Project category filters">
           <button class="tag selected" id="all">All</button>
           <button class="tag" id="web">Web</button>
           <button class="tag" id="brand">Brand</button>
@@ -195,7 +247,7 @@
             <div class="img-wrapper">
               <img
                 src="images/arclight.webp"
-                alt="arclight platform project image"
+                alt="Screenshot of the Arclight platform dashboard"
               />
             </div>
             <div class="text">
@@ -212,7 +264,7 @@
             <div class="img-wrapper">
               <img
                 src="images/identity.webp"
-                alt="nexar identity system project image"
+                alt="Brand identity concept for Nexar"
               />
             </div>
             <div class="text">
@@ -229,7 +281,7 @@
             <div class="img-wrapper">
               <img
                 src="images/medical.jpg"
-                alt="Meridian Health App project image"
+                alt="Meridian Health App interface on mobile screens"
               />
             </div>
             <div class="text">
@@ -246,7 +298,7 @@
             <div class="img-wrapper">
               <img
                 src="images/polaris.webp"
-                alt="Polaris Analytics project image"
+                alt="Analytics dashboard for Polaris Analytics"
               />
             </div>
             <div class="text">
@@ -263,7 +315,7 @@
             <div class="img-wrapper">
               <img
                 src="images/landing.webp"
-                alt="Vanta Landing project image"
+                alt="Landing page design for Vanta compliance tool"
               />
             </div>
             <div class="text">
@@ -280,7 +332,7 @@
             <div class="img-wrapper">
               <img
                 src="images/rebrand.webp"
-                alt="Echelon Rebrand project image"
+                alt="Visual identity system for Echelon rebrand"
               />
             </div>
             <div class="text">
@@ -380,7 +432,7 @@
           <section class="info">
             <article>
               <div class="icon-wrapper">
-                <i class="fa-solid fa-envelope"></i>
+                <i aria-hidden="true" class="fa-solid fa-envelope"></i>
               </div>
               <div class="text">
                 <h3 class="title">Email</h3>
@@ -389,7 +441,7 @@
             </article>
             <article>
               <div class="icon-wrapper">
-                <i class="fa-solid fa-phone"></i>
+                <i aria-hidden="true" class="fa-solid fa-phone"></i>
               </div>
               <div class="text">
                 <h3 class="title">Phone</h3>
@@ -398,7 +450,7 @@
             </article>
             <article>
               <div class="icon-wrapper">
-                <i class="fa-solid fa-location-dot"></i>
+                <i aria-hidden="true" class="fa-solid fa-location-dot"></i>
               </div>
               <div class="text">
                 <h3 class="title">Location</h3>
@@ -407,7 +459,7 @@
             </article>
             <article>
               <div class="icon-wrapper">
-                <i class="fa-solid fa-link"></i>
+                <i aria-hidden="true" class="fa-solid fa-link"></i>
               </div>
               <div class="text">
                 <h3 class="title">Website</h3>
@@ -417,7 +469,7 @@
           </section>
         </div>
         <div class="right-side">
-          <form method="post">
+          <form method="post" aria-label="Project inquiry form">
             <label for="name">
               Full name <span>*</span>
               <input
@@ -440,7 +492,7 @@
             </label>
             <label for="service">
               Service needed <span>*</span>
-              <select name="service" id="service">
+              <select name="service" id="service" required aria-required="true">
                 <option value="" selected disabled hidden>
                   Select a service...
                 </option>
@@ -458,7 +510,9 @@
               <textarea
                 name="notes"
                 id="notes"
-                placeholder="What are you building? What's the timeline? What'is the budget?"
+                required
+                aria-required="true"
+                placeholder="What are you building? What's the timeline? What's the budget?"
               ></textarea>
             </label>
             <button type="submit" class="btn-primary">Send Message</button>
@@ -470,9 +524,9 @@
     <footer>
       <div class="main-footer">
         <div class="header">
-          <a class="logo-wrapper">
+          <a class="logo-wrapper" href="#hero">
             <div class="icon-wrapper">
-              <i class="fa-solid fa-circle-nodes"></i>
+              <i aria-hidden="true" class="fa-solid fa-circle-nodes"></i>
             </div>
             <p>Orbit Studio</p>
           </a>

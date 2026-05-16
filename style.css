@@ -26,8 +26,12 @@
   --max: 1200px;
   --r: 12px;
   --r-lg: 20px;
+  --r-xl: 20px;
+  --r-full: 999px;
 
   --ease: 0.3s ease-in-out;
+  --focus-outline: 5px solid rgba(168, 217, 58, 0.6);
+  --focus-offset: 2px;
 }
 
 html {
@@ -37,6 +41,32 @@ html {
 body {
   font-family: var(--font-body);
   padding-top: var(--nav-h);
+  background-color: var(--white);
+  color: var(--ink);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-head);
+  color: inherit;
+  margin: 0;
+  line-height: 1.2;
+}
+
+p,
+li,
+button,
+input,
+select,
+textarea,
+a {
+  font-family: inherit;
 }
 
 a {
@@ -112,7 +142,7 @@ a.btn-secondary {
 @media (min-width: 768px) {
   .section-header h2 {
     font-size: 3em;
-    max-width: 50%;
+    max-width: 50% !important;
   }
 }
 
@@ -828,7 +858,7 @@ section.contact form {
   }
   .section-header h2 {
     font-size: clamp(2em, 5vw, 3em);
-    max-width: 100%;
+    max-width: 100% !important;
   }
   section.contact .info {
     grid-template-columns: 1fr 1fr;
@@ -900,8 +930,14 @@ footer .sub-footer {
     justify-content: space-between;
     align-items: center;
 
-    .header .description{
+    .header .description {
       max-width: 460px;
     }
   }
+}
+
+.menu-toggle {
+  background-color: transparent;
+  border: none;
+  outline: none;
 }

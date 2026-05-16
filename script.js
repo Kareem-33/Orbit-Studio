@@ -1,70 +1,90 @@
 let lastScrollTop = 0;
-window.addEventListener(
-  "scroll",
-  function () {
-    var header = document.querySelector("header");
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+const header = document.querySelector("header");
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector("nav.mobile");
+const mobileNavLinks = document.querySelectorAll("nav.mobile ul a");
+const filterTags = document.querySelectorAll(
+  ".portfolio .filter-tags button.tag",
+);
+const portfolioItems = document.querySelectorAll(
+  ".portfolio .project-cards .card",
+);
+let isTicking = false;
+
+const setMobileNavState = (isOpen) => {
+  if (!mobileNav) return;
+  mobileNav.classList.toggle("active", isOpen);
+  document.body.style.overflow = isOpen ? "hidden" : "auto";
+};
+
+const onScroll = () => {
+  const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+  if (header) {
     if (scrollPosition > lastScrollTop) {
       header.classList.add("scrolled");
     } else if (scrollPosition < lastScrollTop) {
       header.classList.remove("scrolled");
     }
-    lastScrollTop = scrollPosition <= 0 ? 0 : scrollPosition;
+  }
+  lastScrollTop = Math.max(scrollPosition, 0);
+  isTicking = false;
+};
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(onScroll);
+      isTicking = true;
+    }
   },
   false,
 );
 
-const menuToggle = document.querySelector(".menu-toggle");
-const mobileNav = document.querySelector("nav.mobile");
-const mobileNavLinks = document.querySelectorAll("nav.mobile ul a");
-menuToggle.addEventListener("click", () => {
-  if (mobileNav.classList.contains("active")) {
-    mobileNav.classList.remove("active");
-    document.body.style.overflow = "auto";
-  } else {
-    mobileNav.classList.add("active");
-    document.body.style.overflow = "hidden";
-  }
-});
-mobileNavLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
+if (menuToggle && mobileNav) {
+  menuToggle.addEventListener("click", () => {
+    setMobileNavState(!mobileNav.classList.contains("active"));
+  });
 
-    const target = document.querySelector(link.getAttribute("href"));
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768 && mobileNav.classList.contains("active")) {
+      setMobileNavState(false);
+    }
+  });
 
-    mobileNav.classList.remove("active");
-    document.body.style.overflow = "auto";
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && mobileNav.classList.contains("active")) {
+      setMobileNavState(false);
+    }
+  });
 
-    setTimeout(() => {
-      target.scrollIntoView({
-        behavior: "smooth",
-      });
-    }, 300);
+  mobileNavLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+      const target = href ? document.querySelector(href) : null;
+      setMobileNavState(false);
+      if (target) {
+        event.preventDefault();
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    });
+  });
+}
+
+const updatePortfolioFilters = (selectedFilter) => {
+  const showAll = selectedFilter === "all";
+  portfolioItems.forEach((item) => {
+    const shouldDisplay = showAll || item.classList.contains(selectedFilter);
+    item.style.display = shouldDisplay ? "" : "none";
+  });
+};
+
+filterTags.forEach((tag) => {
+  tag.addEventListener("click", () => {
+    filterTags.forEach((otherTag) => otherTag.classList.remove("selected"));
+    tag.classList.add("selected");
+    updatePortfolioFilters(tag.id);
   });
 });
-
-
-const filterTags = document.querySelectorAll(".portfolio .filter-tags button.tag");
-const portfolioItems = document.querySelectorAll(".portfolio .project-cards .card");
-filterTags.forEach((tag) => {
-  tag.addEventListener('click', () => {
-    filterTags.forEach((tag) => {
-      tag.classList.remove('selected');
-    })
-    tag.classList.add('selected');
-
-    if(tag.id === 'all') { 
-      portfolioItems.forEach((item) => {
-        item.style.display = 'block';
-      });
-    } else {
-        portfolioItems.forEach((item) => {
-          if(item.classList.contains(tag.id)) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        })
-    }
-  })
-})
